@@ -24,7 +24,7 @@ jobs:
         run: sed -i "s/AUTH_KEY=''/AUTH_KEY='${{ secrets.AUTH_KEY }}'/" .env
 
       - name: Install Allure CLI
-        run: sudo dpgk -i allure_2.35.1-1_all.deb 
+        run: sudo dpkg -i allure_2.35.1-1_all.deb 
           
       - name: Run .sberenv
         run: source .sberenv/bin/activate
