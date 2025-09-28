@@ -22,6 +22,9 @@ jobs:
 
       - name: Fill .env files from secrets
         run: sed -i "s/AUTH_KEY=\"\"/AUTH_KEY=\"${{ secrets.AUTH_KEY }}\"/" .env
+        
+      - name: Run .sberenv
+        run: source ./sberenv/bin/activate
 
       - name: Run Tests
         run: pytest -v
