@@ -9,3 +9,9 @@ Sberbank test task
 
 Реализован скрипт initscript.py для автозаполнения .env  и загрузки  зависимостей.
 Так же решена задача со звездочкой. Спасибо за интересное задание.
+
+
+Для запуска:
+python3 initscript.py;
+source .sberenv/bin/activate
+pytest
