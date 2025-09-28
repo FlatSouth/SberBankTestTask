@@ -25,6 +25,9 @@ jobs:
         
       - name: Run .sberenv
         run: source .sberenv/bin/activate
+      
+      - name: Try install pytest
+        run: pip install pytest
 
       - name: Run Tests
         run: pytest -v
