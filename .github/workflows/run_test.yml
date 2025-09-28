@@ -26,8 +26,8 @@ jobs:
       - name: Run .sberenv
         run: source .sberenv/bin/activate
       
-      - name: Try install pytest
-        run: pip install pytest
+      - name: Install requirements in virtial environment
+        run: pip install -r requirements.txt
 
       - name: Run Tests
         run: pytest -v
