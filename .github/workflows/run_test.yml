@@ -31,3 +31,14 @@ jobs:
 
       - name: Run Tests
         run: pytest -v
+
+      - name: Generate Allure Output
+        run: allure generate allure-output
+      
+      - name: Upload Allure report
+        uses: actions/upload-pages-artifact@v3
+        with:
+              name: allure-output
+              path: allure-allure-output/
+              retention-days: 30
+                
