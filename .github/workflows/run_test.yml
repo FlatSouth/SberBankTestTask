@@ -24,7 +24,7 @@ jobs:
         run: sed -i "s/AUTH_KEY=''/AUTH_KEY='${{ secrets.AUTH_KEY }}'/" .env
 
       - name: Install Allure CLI
-        run: sudo apt-get install allure
+        run: sudo dpgk -i allure_2.35.1-1_all.deb 
           
       - name: Run .sberenv
         run: source .sberenv/bin/activate
@@ -41,7 +41,7 @@ jobs:
       - name: Upload Allure report
         uses: actions/upload-pages-artifact@v3
         with:
-              name: allure-output
-              path: allure-allure-output/
+              name: allure-report
+              path: allure-report/
               retention-days: 30
                 
