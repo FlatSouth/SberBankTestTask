@@ -1,0 +1,27 @@
+name: Try to Run Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copy code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run initscript.py
+        run: python3 initscript.py
+
+      - name: Fill .env files from secrets
+        run: sed -i "s/AUTH_KEY=\"\"/AUTH_KEY=\"${{ secrets.AUTH_KEY }}\"/" .env
+
+      - name: Run Tests
+        run: pytest -v
